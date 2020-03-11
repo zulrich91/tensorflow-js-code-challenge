@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tensorflow JS</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+	<label for="Results">Results:</label>
+	<p id='Results'></p>
+	<p id="layer_result"> </p>
+	<p id="layer_error" style="color:red"></p>
+	<p id="opt_error" style="color:red" ></p>
+	<p id="lost_error" style="color:red"></p>
+	<div id='model'>
+		<label for="layer">Choose a layer:</label>
+		<select id="layer" >
+			<option value="None" >-- Select --</option>
+			<option value="ID001">Relu</option>
+			<option value="ID002" selected>Dense</option>
+			<option value="ID003">Softmax</option>
+		</select>
+
+		<br/>
+		<br/>
+		<label for="optimiser">Choose an optimizer:</label>
+		<select id="optimiser">
+			<option value="None">-- Select --</option>
+			<option value="ID001">ADAM</option>
+			<option value="ID002" selected>SGD</option>
+			<option value="ID003">ADAMAX</option>
+		</select>
+
+		<br/>		
+		<br/>
+		<label for="loss">Choose a loss function:</label>
+		<select id="loss">
+			<option value="None">-- Select --</option>
+			<option value="ID001">Log Loss</option>
+			<option value="ID002" selected>Mean Squared Error</option>
+			<option value="ID003">Softmax Cross Entropy</option>
+		</select>
+
+		<br/>		
+		<br/>
+		<label for="metric">Choose an evaluation metric:</label>
+		<select id="metric">
+			<option value="None">-- Select --</option>
+			<option value="ID001">Precision</option>
+			<option value="ID002" selected>Accuracy</option>
+			<option value="ID003">Recall</option>
+		</select>
+
+		<br/>
+		<br/>
+<!-- 		<button type="button" onclick="GetSelectedValue()">Get Selected Value</button>
+
+		<button type="button" onclick="GetSelectedText()">Get Selected Text</button> -->
+
+		<button type="button" onclick="RunModel()">Run Model</button>
+
+	</div>
+</body>
+</html>
